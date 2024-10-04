@@ -7,8 +7,11 @@ La señal se adquirió principalmente de tres músculos: el flexor ulnar del car
 La señal original capturada presenta las siguientes características:
 - **Frecuencia de muestreo**: 3000 Hz
 - **Tiempo de muestreo**: 333.33 µs. Este valor se calculó a partir de la siguiente fórmula:
+
 ![WhatsApp Image 2024-10-03 at 5 36 18 PM](https://github.com/user-attachments/assets/839c2816-ae0b-4b3d-a4d2-33753edf9cb2)
+
 - **Duración total de la señal**: 60 segundos, podemos comprobarlo a partir de:
+
 ![image](https://github.com/user-attachments/assets/0fa3b120-6e8b-4901-9fb5-7b0e1743fecb)
 
 - **Número de contracciones**: 600 contracciones por minuto.
@@ -58,5 +61,8 @@ Al aplicar la ventana de Hanning de tamaño 591, la amplitud de la señal se ha 
      - La señal original tiene amplitudes mucho más grandes, con picos que alcanzan valores cercanos a 400.
      - La señal con la ventana de Hanning está considerablemente reducida en amplitud, con valores máximos alrededor de 100, lo cual indica que la ventana ha atenuado las oscilaciones más fuertes y centrado la señal en sus componentes más relevantes.
 
+## Análisis espectral 
 
+![image](https://github.com/user-attachments/assets/41266a94-a2f5-4502-b11f-34b428da6628)
 
+Analizamos el espectro de frecuencia de la ventana 591, que nos permite deducir cómo está distribuida la energía de la señal en diferentes frecuencias. Observamos un pico fuerte alrededor de 100 Hz, lo que indica que la mayor parte de la energía se concentra en esta frecuencia, un patrón típico en señales de electromiografía, donde la actividad muscular se encuentra generalmente en el rango de 10 Hz a 150 Hz. Después de este pico, la magnitud de la energía decae rápidamente, lo que es consistente con el suavizado aplicado por la ventana de Hanning, que elimina componentes de alta frecuencia no relevantes o ruido. Además, se observan varios picos entre 50 Hz y 150 Hz, lo cual es esperado, ya que este es el rango principal asociado a la actividad muscular. En conjunto, el espectro refleja claramente la concentración de energía en torno a los 100 Hz, característico de la contracción muscular.
